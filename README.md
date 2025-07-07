@@ -1,2 +1,1 @@
-# MF5-core
-MF5
+# MF5 Documentation
