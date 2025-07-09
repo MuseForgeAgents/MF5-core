@@ -1,10 +1,13 @@
 from starlette.middleware.base import BaseHTTPMiddleware
-from fastapi import Request
-from starlette.responses import JSONResponse
+from starlette.requests import Request
+from starlette.responses import Response
 
 class AuthMiddleware(BaseHTTPMiddleware):
+    def __init__(self, app):
+        super().__init__(app)
+
     async def dispatch(self, request: Request, call_next):
-        auth = request.headers.get("Authorization")
-        if not auth or not auth.startswith("Bearer "):
-            return JSONResponse(status_code=403, content={"detail": "Unauthorized"})
-        return await call_next(request)
+        # Example auth logic (customize as needed)
+        # You could check headers, tokens, etc.
+        response: Response = await call_next(request)
+        return response
