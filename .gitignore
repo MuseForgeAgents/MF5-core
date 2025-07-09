@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# FastAPI / Uvicorn logs
+*.log
+
+# VS Code / Codespaces
+.vscode/
+.devcontainer/
+*.code-workspace
+
+# Bytecode or temp files
+*.bak
+*.swp
+.DS_Store
